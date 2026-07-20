@@ -424,7 +424,7 @@ export function PinSetup({
   return (
     <div className="flex flex-col min-h-screen animate-fade-in" style={{ background: '#030F07', color: '#F0FAF0' }}>
       <div className="px-6 pt-3 pb-4">
-        <BackBtn onBack={() => step === 'confirm' ? (setStep('create'), setConfirmPin(''), setPin('')) : go('bank-link')} />
+        <BackBtn onBack={() => step === 'confirm' ? (setStep('create'), setConfirmPin(''), setPin('')) : go('permissions')} />
       </div>
 
       <div className="flex-1 px-6 flex flex-col items-center justify-center">

@@ -68,9 +68,15 @@ export const Splash: React.FC<ScreenProps> = ({ go }) => {
       </div>
 
       <div className="pb-6">
-        <PrimaryBtn onClick={() => go('how-it-works')}>
+        <PrimaryBtn onClick={() => go('signup')}>
           Get Started →
         </PrimaryBtn>
+        <p className="text-center text-[13px] mt-4 text-[#7AAD8A]">
+          Already have an account?{' '}
+          <button onClick={() => go('login')} className="text-[#AAFF45] font-bold hover:underline">
+            Log In
+          </button>
+        </p>
         <p className="text-center text-[11px] mt-4 tracking-wide text-[#2E6040] flex items-center justify-center gap-1.5">
           <IconShield size={13} color="#2E6040" />
           Multi-Network · 256-bit encrypted
@@ -189,7 +195,7 @@ export const Permissions: React.FC<ScreenProps> = ({ go }) => {
 
   const handleButtonClick = () => {
     if (allGranted) {
-      go('bank-link');
+      go('pin-setup');
     } else {
       // Grant all 3 permissions
       setPerms({ callPhone: true, readPhoneState: true, accessibility: true });
@@ -221,7 +227,7 @@ export const Permissions: React.FC<ScreenProps> = ({ go }) => {
     <div className="min-h-screen bg-[#030F07] text-[#F0FAF0] flex flex-col p-6 animate-fade-in">
       <div className="flex justify-between items-center pt-2 pb-6">
         <BackBtn onBack={() => go('how-it-works')} onClick={() => go('how-it-works')} />
-        <button onClick={() => go('bank-link')} className="text-[#5A8870] text-[13px] font-semibold px-3 py-1.5 rounded-xl border border-[rgba(170,255,69,0.1)]">
+        <button onClick={() => go('pin-setup')} className="text-[#5A8870] text-[13px] font-semibold px-3 py-1.5 rounded-xl border border-[rgba(170,255,69,0.1)]">
           Skip for Demo
         </button>
       </div>
@@ -270,7 +276,7 @@ export const Permissions: React.FC<ScreenProps> = ({ go }) => {
 
       <div className="pb-6 pt-4">
         <PrimaryBtn onClick={handleButtonClick}>
-          {allGranted ? 'Link Your Bank Account →' : `Grant permissions (${grantedCount}/3)`}
+          {allGranted ? 'Set Up Security PIN →' : `Grant permissions (${grantedCount}/3)`}
         </PrimaryBtn>
       </div>
     </div>
